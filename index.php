@@ -11,7 +11,7 @@
         <script type="module" src="./scripts/main_page_handler.js"></script>
     </head>
     <body>
-        <?php include("./templates/nav.html");?>
+        <?php include(__DIR__ . "./templates/nav.html");?>
         
         <div class="container mt-5">
             <form class="border rounded mb-5 p-5 add_site_form">
