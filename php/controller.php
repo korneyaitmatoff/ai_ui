@@ -1,5 +1,9 @@
 <?php
 
+ini_set("log_errors", 1);
+ini_set("error_log", "/php-error.log");
+error_log( "Hello, errors!" );
+
 require __DIR__ . "/api/bootstrap.php";
 
 $API_HOST = "http://45.9.43.40";
