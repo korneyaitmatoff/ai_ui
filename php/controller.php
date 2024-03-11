@@ -15,9 +15,9 @@ $valApi = new ValApi($API_HOST, 81, "html_val");
 
 $income = json_decode(file_get_contents('php://input'), true);
 
-$f = fopen(__DIR__ . "/data.log", "a");
-fwrite($f, "\nINCOME:\n" . print_r($income, true) . "\nGET:\n" . print_r($_GET, true) . "\nPOST\n" . print_r($_POST, true) . "\n");
-fclose($f);
+// $f = fopen(__DIR__ . "/data.log", "a");
+// fwrite($f, "\nINCOME:\n" . print_r($income, true) . "\nGET:\n" . print_r($_GET, true) . "\nPOST\n" . print_r($_POST, true) . "\n");
+// fclose($f);
 
 if (isset($_GET['type'])) {
     if ($_GET['type'] == 'get_pp') {
