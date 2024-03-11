@@ -1,7 +1,7 @@
 <?php
 
 ini_set("log_errors", 1);
-ini_set("error_log", "/php-error.log");
+ini_set("error_log", __DIR__ . "/php-error.log");
 error_log( "Hello, errors!" );
 
 require __DIR__ . "/api/bootstrap.php";
@@ -14,6 +14,10 @@ $commentApi = new CommentApi($API_HOST, 83, "comment");
 $valApi = new ValApi($API_HOST, 81, "html_val");
 
 $income = json_decode(file_get_contents('php://input'), true);
+
+$f = fopen(__DIR__ . "/data.log", "a");
+fwrite($f, "\nINCOME:\n" . print_r($income, true) . "\nGET:\n" . print_r($_GET, true) . "\nPOST\n" . print_r($_POST, true) . "\n");
+fclose($f);
 
 if (isset($_GET['type'])) {
     if ($_GET['type'] == 'get_pp') {
