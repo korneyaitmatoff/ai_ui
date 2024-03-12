@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let loginForm = new FormData(document.querySelector(".login_form"));
         fetch(appUrl, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
             body: JSON.stringify({
                 type: 'auth',
                 login: loginForm.get("login"),
@@ -27,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function setSessionData(login) {
     fetch(appUrl + "?type=get_user_data&login=" + login,{
         method: 'GET',
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+        },
     }).then(function (response) {
         response.json().then(function (text) {
             sessionStorage.setItem("id", text['id']);
