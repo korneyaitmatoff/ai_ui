@@ -17,7 +17,7 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <input type="submit" class="btn btn-primary btn_send_auth_form">
             </form>
             <p><a href="/register.php" class="link-primary">Sign up</a></p>
         </div>

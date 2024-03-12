@@ -1,7 +1,7 @@
 const appUrl = "php/controller.php";
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".login_form").addEventListener("submit", function() {
+    document.querySelector(".btn_send_auth_form").addEventListener("click", function() {
         let loginForm = new FormData(document.querySelector(".login_form"));
         fetch(appUrl, {
             method: 'POST',
