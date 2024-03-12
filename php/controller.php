@@ -13,9 +13,17 @@ $valApi = new ValApi($API_HOST, 81, "html_val");
 
 $income = json_decode(file_get_contents('php://input'), true);
 
-// $f = fopen(__DIR__ . "/data.log", "a");
-// fwrite($f, "\nINCOME:\n" . print_r($income) . "\nGET:\n" . print_r($_GET) . "\nPOST\n" . print_r($_POST) . "\n");
-// fclose($f);
+$message  = "Received Request at " . time() . "\n";
+$message .= "------------------------------------------------------------------------\n";
+$message .= "\n";
+$message .= json_encode($_REQUEST, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT) . "\n";
+$message .= "\n";
+$message .= json_encode($_SERVER, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT) . "\n";
+$message .= "\n";
+
+$filename = "logger.txt";
+
+file_put_contents("logger.txt", $message, FILE_APPEND);
 
 if (isset($_GET['type'])) {
     if ($_GET['type'] == 'get_pp') {
