@@ -35,26 +35,28 @@ document.addEventListener("DOMContentLoaded", function () {
             validation_container.appendChild(val_title);
 
             let last_update = document.createElement("p");
-            
-            let date = new Date(Date.parse(text['validation'][0].created_at));
-            let dd = date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
-            let mm = date.getMonth() > 10 ? (date.getMonth() + 1) : "0" + (date.getMonth() + 1);
 
-            last_update.innerHTML = "Last update: " + dd+"."+mm+"."+date.getFullYear().toString().substr(-2);
+            if (text['validation'].length != 0) {
+                let date = new Date(Date.parse(text['validation'][0].created_at));
+                let dd = date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
+                let mm = date.getMonth() > 10 ? (date.getMonth() + 1) : "0" + (date.getMonth() + 1);
 
-            validation_container.appendChild(last_update);
+                last_update.innerHTML = "Last update: " + dd+"."+mm+"."+date.getFullYear().toString().substr(-2);
 
-            text['validation'].forEach(element => {
-                
-                JSON.parse(element.logs).forEach(log => {
-                    let validation_container_el = document.createElement("li");
+                validation_container.appendChild(last_update);
 
-                    validation_container_el.classList.add("list-group-item")
-                    validation_container_el.innerHTML = log;
+                text['validation'].forEach(element => {
+                    
+                    JSON.parse(element.logs).forEach(log => {
+                        let validation_container_el = document.createElement("li");
 
-                    validation_container.appendChild(validation_container_el);
-                })
-            });
+                        validation_container_el.classList.add("list-group-item")
+                        validation_container_el.innerHTML = log;
+
+                        validation_container.appendChild(validation_container_el);
+                    })
+                });
+            }
 
             let comments_container = document.querySelector(".comments_list");
             comments_container.classList.add("list-group")
@@ -78,8 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
     
-    document.querySelector(".create_comment").addEventListener("submit", function () {
-        let form = new FormData(document.querySelector(".create_comment"));
+    document.querySelector(".btn_send_comment_form").addEventListener("click", function () {
+        let site_form = new FormData(document.querySelector(".create_comment"));
         
         fetch(
             appUrl,

@@ -3,7 +3,7 @@ import logIn from "./functions.js";
 const appUrl = "php/controller.php";
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector("#register_form").addEventListener("submit", function() {
+    document.querySelector(".btn_send_register_form").addEventListener("click", function() {
         let formData = new FormData(document.querySelector("#register_form"));
         
         fetch(appUrl, {

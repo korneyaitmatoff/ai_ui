@@ -11,7 +11,7 @@
         <script type="module" src="./scripts/main_page_handler.js"></script>
     </head>
     <body>
-        <?php include(__DIR__ . "./templates/nav.html");?>
+        <?php include("./templates/nav.html");?>
         
         <div class="container mt-5">
             <form class="border rounded mb-5 p-5 add_site_form">
@@ -28,7 +28,7 @@
                     <label class="form-label">Description</label>
                     <input type="text" class="form-control" id="desc_input" name="description" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Create!</button>
+                <input type="submit" class="btn btn-primary btn_send_site_form" value="CREATE!">
             </form>
             <div class="mt-5">
                     <h2>Web-apps List</h2>

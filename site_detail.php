@@ -19,7 +19,7 @@
                 <label for="commentText" class="form-label">Your Comment</label>
                 <textarea class="form-control" id="commentText" rows="3" name="text" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Add Comment</button>
+            <input type="submit" class="btn btn-primary btn_send_comment_form" value="Submit">
         </form>
 
         <div class="mt-5">
