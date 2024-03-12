@@ -19,8 +19,6 @@ class Api {
         ));
         $output = curl_exec($curl);
         curl_close($curl);
-
-        file_put_contents("logger.txt", $output, FILE_APPEND);
         
         return;
     }
@@ -38,8 +36,6 @@ class Api {
             ]);
         $output = curl_exec($curl);
         curl_close($curl);
-
-        file_put_contents("logger.txt", $output, FILE_APPEND);
 
         return $output;
     }
