@@ -1,8 +1,9 @@
 const appUrl = "php/controller.php";
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".btn_send_auth_form").addEventListener("click", function() {
+    document.querySelector(".btn_send_auth_form").addEventListener("click", function(e) {
         let loginForm = new FormData(document.querySelector(".login_form"));
+	e.preventDefault();
         fetch(appUrl, {
             method: 'POST',
             headers: {
@@ -14,6 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 password: loginForm.get("password"),
             })
         }).then(function(res) {
+            if (!res.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            } else {
+                console.log("ok");
+            }
             res.json().then(function(text) {
                 if(text != -1) {
                     setSessionData(loginForm.get("login"));
