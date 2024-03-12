@@ -20,10 +20,14 @@ $message .= json_encode($_REQUEST, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT) . "\n"
 $message .= "\n";
 $message .= json_encode($_SERVER, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT) . "\n";
 $message .= "\n";
+$message .= json_encode($income, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT) . "\n";
+$message .= "\n";
+
 
 $filename = __DIR__ . "/logger.txt";
 
 file_put_contents("logger.txt", $message, FILE_APPEND);
+file_put_contents("logger.txt", $income, FILE_APPEND);
 
 if (isset($_GET['type'])) {
     if ($_GET['type'] == 'get_pp') {
