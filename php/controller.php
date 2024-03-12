@@ -37,7 +37,7 @@ if (isset($_GET['type'])) {
     
     if ($_GET['type'] == 'get_user_data') {
         # get user data
-        print_r($userApi->getUser($_GET['login']));
+        print_r(json_encode($userApi->getUser($_GET['login'])));
     }
     
     if ($_GET['type'] == 'get_sites_list') {
@@ -69,10 +69,10 @@ if (isset($income['type'])) {
     }
     
     if ($income['type'] == "auth") {
-        print_r($userApi->auth(
+        print_r(json_encode($userApi->auth(
             login: $income['login'],
             password: $income['password'],
-        ));
+        )));
     }
 
     if ($income['type'] == "create_user") {
