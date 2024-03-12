@@ -1,6 +1,7 @@
 const appUrl = "php/controller.php";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (e) {
+    e.preventDefault();
     getPPData(sessionStorage.getItem("login"));
 })
 
