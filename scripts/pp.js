@@ -10,7 +10,7 @@ function getPPData(login) {
     {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json; charset=UTF-8',
         },
     }).then(function(response) {
         response.json().then(function(text) {
