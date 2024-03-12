@@ -21,7 +21,7 @@ $message .= "\n";
 $message .= json_encode($_SERVER, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT) . "\n";
 $message .= "\n";
 
-$filename = "logger.txt";
+$filename = __DIR__ . "/logger.txt";
 
 file_put_contents("logger.txt", $message, FILE_APPEND);
 
