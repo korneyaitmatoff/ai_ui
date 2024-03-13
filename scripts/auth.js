@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("set session data, call");
 
                 setSessionData(loginForm.get("login"));
-
-                window.location.replace("/person_profile.php")
             } else {
                 alert('Неверное имя пользователя или пароль!');
             }
@@ -36,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 })
 
-    function setSessionData(login) {
+    function setSessionData(login, callback) {
         console.log("set session data, func");
         fetch(appUrl + "?type=get_user_data&login=" + login,{
             method: 'GET',
@@ -45,14 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }).then(function (response) {
             if (!response.ok) {
-                throw new Error(`HTTP error: ${response.status}`);
+                console.log("set session data, response, wrong");
             } else {
                 console.log("set session data, response, ok");
+
+                response.json().then(function (text) {
+                    sessionStorage.setItem("id", text['id']);
+                    sessionStorage.setItem("login", text['login']);
+                })
+
+                window.location.replace("/person_profile.php")
+
             }
-            response.json().then(function (text) {
-                sessionStorage.setItem("id", text['id']);
-                sessionStorage.setItem("login", text['login']);
-            })
         })
     }
 })
