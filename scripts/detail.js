@@ -80,8 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
     
-    document.querySelector(".btn_send_comment_form").addEventListener("click", function () {
+    document.querySelector(".btn_send_comment_form").addEventListener("click", function (event) {
         let site_form = new FormData(document.querySelector(".create_comment"));
+        
+        event.preventDefault();
         
         fetch(
             appUrl,
@@ -98,7 +100,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
             }).then(function(response) {
                 response.json().then(function(text) {
-                    window.location.replace("/site_detail.php?id=" + params.get("id"));
+                    if (response.ok) {
+                        window.location.replace("/site_detail.php?id=" + params.get("id"));
+                    } else {
+                        console.log("create comment, response, wrong")
+                    }
+
                 })
             })
     })
