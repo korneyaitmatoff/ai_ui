@@ -35,7 +35,7 @@ function getPPData(login) {
 
                 site_url_val.href = "/php/controller.php?type=add_val&id=" + element['id']
                 site_url_val.classList.add("btn", "btn-primary");
-                site_url_val.innerHTML = "RUN VALIDATION!";
+                site_url_val.innerHTML = "ЗАПУСТИТЬ ПРОВЕРКУ!";
 
                 site_container.appendChild(site_url);
                 site_container.appendChild(site_url_val);

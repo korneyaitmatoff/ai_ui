@@ -12,17 +12,17 @@
     <?php include("./templates/nav.html");?>
 
     <div class="container mt-5">
-        <h1 class="mt-5">Person Profile</h1>
+        <h1 class="mt-5">Профиль пользователя</h1>
         <div>
-            <h2 class="title_user_name">User Info</h2>
+            <h2 class="title_user_name">Информация о пользователе</h2>
         </div>
         <div class="mt-3">
-            <h2>User's sites</h2>
+            <h2>Сайты пользователя</h2>
             <ul class="list-group users_sites">
             </ul>
         </div>
         <div class="mt-3">
-            <h2>User's Comments</h2>
+            <h2>Комментарии пользователя</h2>
             <ul class="list-group users_comments">
             </ul>
         </div>

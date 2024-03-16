@@ -4,7 +4,7 @@ function setSites(sites) {
         let link = document.createElement('a');
         link.href = "/site_detail.php?id=" + site.id;
         link.classList.add("btn", "btn-primary");
-        link.innerHTML = "More";
+        link.innerHTML = "Подробнее...";
 
         let container = document.createElement('li');
         container.classList.add('list-group-item');

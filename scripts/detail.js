@@ -15,22 +15,22 @@ document.addEventListener("DOMContentLoaded", function () {
             let data_container = document.querySelector(".site_data");
 
             let url_container = document.createElement("p");
-            url_container.innerHTML = "URL: " + text['data']['url'];
+            url_container.innerHTML = "Ссылка: " + text['data']['url'];
 
             let name_container = document.createElement("p");
-            name_container.innerHTML = "Name: " + text['data']['name'];
+            name_container.innerHTML = "Название сайта: " + text['data']['name'];
 
             let description_container = document.createElement("p");
-            description_container.innerHTML = "Description: " + text['data']['description'];
+            description_container.innerHTML = "Описание: " + text['data']['description'];
 
             let owner_container = document.createElement("p");
-            owner_container.innerHTML = "Owner: " + text['user']['name'];
+            owner_container.innerHTML = "Владелец: " + text['user']['name'];
 
             let validation_container = document.createElement("ul");
             validation_container.classList.add("list-group")
 
             let val_title = document.createElement("h2");
-            val_title.innerHTML = "Errors list";
+            val_title.innerHTML = "Список ошибок";
 
             validation_container.appendChild(val_title);
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let dd = date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
                 let mm = date.getMonth() > 10 ? (date.getMonth() + 1) : "0" + (date.getMonth() + 1);
 
-                last_update.innerHTML = "Last update: " + dd+"."+mm+"."+date.getFullYear().toString().substr(-2);
+                last_update.innerHTML = "Последнее обновление: " + dd+"."+mm+"."+date.getFullYear().toString().substr(-2);
 
                 validation_container.appendChild(last_update);
 
