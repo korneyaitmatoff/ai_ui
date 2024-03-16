@@ -10,16 +10,16 @@
         <div class="container mt-5">
             <form class="login_form">
                 <div class="mb-3">
-                    <label for="authLogin" class="form-label">Login</label>
+                    <label for="authLogin" class="form-label">Логин</label>
                     <input type="text" class="form-control" id="login" name="login" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">Пароль</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
                 <input type="submit" class="btn btn-primary btn_send_auth_form">
             </form>
-            <p><a href="/register.php" class="link-primary">Sign up</a></p>
+            <p><a href="/register.php" class="link-primary">Войти</a></p>
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>

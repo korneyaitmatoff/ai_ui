@@ -17,20 +17,20 @@
         <h1>Register</h1>
         <form id="register_form">
         <div class="mb-3">
-                <label for="registerName" class="form-label">Name</label>
+                <label for="registerName" class="form-label">Имя</label>
                 <input type="text" class="form-control" id="registerName"  name="name" required>
             </div>
             <div class="mb-3">
-                <label for="registerLogin" class="form-label">Login</label>
+                <label for="registerLogin" class="form-label">Ваш логин</label>
                 <input type="text" class="form-control" id="registerLogin" name="login" required>
             </div>
             <div class="mb-3">
-                <label for="registerPassword" class="form-label">Password</label>
+                <label for="registerPassword" class="form-label">Пароль</label>
                 <input type="password" class="form-control" id="registerPassword" name="password" required>
             </div>
             <input class="btn btn-primary btn_send_register_form" value="Sign up">
         </form>
-        <p><a href="/auth.php" class="link-primary">Sign in</a></p>
+        <p><a href="/auth.php" class="link-primary">Регистрация</a></p>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
