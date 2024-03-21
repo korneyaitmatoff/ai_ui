@@ -51,8 +51,14 @@ document.addEventListener("DOMContentLoaded", function () {
             let diff = document.querySelector(".diff");
 
             if (text['ml'] == 1) {
-                diff.innerHTML = "Кол-во ошибок на " + text['diff'] + "% меньше, чем среднее значение в данной категории."
+                diff.innerHTML = "Кол-во ошибок на " + text['diff'] + "% меньше, чем среднее значение в данной категории.";
+                diff.classList.add("p-3", "mb-3", "text-bg-success", "rounded-3");
             } else {
+                if (text['diff'] <= 50) {
+                    diff.classList.add("p-3", "mb-3", "text-bg-warning", "rounded-3");
+                } else {
+                    diff.classList.add("p-3", "mb-3", "text-bg-danger", "rounded-3");
+                }
                 diff.innerHTML = "Кол-во ошибок на " + Math.abs(text['diff']) + "% больше, чем среднее значение в данной категории."
             }
         })
