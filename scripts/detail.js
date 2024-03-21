@@ -47,6 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             getChart(labels=labels, data=data);
+            
+            let diff = document.querySelector(".diff");
+
+            if (text['diff'] > 0) {
+                diff.innerHTML = "Кол-во ошибок на " + text['diff'] + " меньше, чем среднее значение."
+            } else {
+                diff.innerHTML = "Кол-во ошибок на " + text['diff'] + " больше, чем среднее значение."
+            }
         })
     })
     

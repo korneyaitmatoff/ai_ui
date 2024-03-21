@@ -18,6 +18,9 @@
             <div class="mt-3">Статистика отображения кол-ва ошибок за каждый прогон</div>
             <canvas id="myChart"></canvas>
         </div>
+        <div class="m-3">
+            <p class="diff"></p>
+        </div>
         <div class="site_data">
         </div>
         <form class="mt-3 create_comment">
