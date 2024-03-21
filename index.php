@@ -40,23 +40,24 @@
             </form>
             <div class="mb-3">
                 <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item d-flex justify-content-between align-items-start active">
-                        <div class="ms-2 me-auto">
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto load_blog_sites">
                             <div class="fw-bold">Блоги</div>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div class="ms-2 me-auto">
+                        <div class="ms-2 me-auto load_shop_sites">
                             <div class="fw-bold">Интернет-магазины</div>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div class="ms-2 me-auto">
+                        <div class="ms-2 me-auto load_soc_sites">
                             <div class="fw-bold">Соц-сети</div>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div class="ms-2 me-auto">
+                        <div class="ms-2 me-auto load_other_sites">
                             <div class="fw-bold">Другое</div>
                         </div>
                     </li>

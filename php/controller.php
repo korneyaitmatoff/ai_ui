@@ -39,7 +39,7 @@ if (isset($_GET['type'])) {
     
     if ($_GET['type'] == 'get_sites_list') {
         # get sites list
-        print_r($siteApi->getSitesList());
+        print_r($siteApi->getSiteListByCategory(category: $_GET['category']));
     }
 
     if ($_GET['type'] == 'get_site_data') {

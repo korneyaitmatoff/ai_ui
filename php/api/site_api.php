@@ -17,4 +17,8 @@ class SiteApi extends Api {
     function getSiteData($id) {
         return $this->get('/data' . '/' .$id);
     }
+
+    function getSiteListByCategory($category) {
+        return $this->get('/list' . '/' . $category);
+    }
 }
