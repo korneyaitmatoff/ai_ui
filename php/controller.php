@@ -53,6 +53,10 @@ if (isset($_GET['type'])) {
 
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
+
+    if ($_GET['type'] == 'get_site_stat') {
+        print_r($valApi->getSiteStat(id: $_GET['id']));
+    }
 }
 
 if (isset($income['type'])) {

@@ -1,7 +1,54 @@
 const appUrl = "php/controller.php";
 
 document.addEventListener("DOMContentLoaded", function () {
+    function getChart(labels, data) {
+        const ctx = document.getElementById('myChart');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Кол-во ошибок за прогон',
+                    data: data,
+                    borderWidth: 1
+                }]
+                },
+                options: {
+                scales: {
+                    y: {
+                    beginAtZero: true
+                    }
+                }
+                }
+            });
+    }
+
     let params = new URLSearchParams(document.location.search);
+
+    fetch(appUrl + "?type=get_site_stat&id=" + params.get("id"), {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then(function(response) {
+        response.json().then(function(text) {
+            console.log(text)
+            let labels = [];
+            let data = [];
+
+            for (var key in text['stat']) {
+                let date = new Date(Date.parse(key));
+                let dd = date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
+                let mm = date.getMonth() > 10 ? (date.getMonth() + 1) : "0" + (date.getMonth() + 1);
+
+                labels.push(dd+"."+mm+"."+date.getFullYear().toString().substr(-2));
+                data.push(text['stat'][key]);
+            }
+            
+            getChart(labels=labels, data=data);
+        })
+    })
     
     fetch(appUrl + "?type=get_site_data&id=" + params.get("id"), {
         method: "GET",

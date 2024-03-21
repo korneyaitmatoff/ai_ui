@@ -6,5 +6,9 @@ class ValApi extends Api {
             "site_id" => $id,
         ], "");
     }
+
+    function getSiteStat($id) {
+        return $this->get('/stat' . '/' . $id);
+    }
 }
 

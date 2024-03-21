@@ -14,31 +14,11 @@
 
     <div class="container mt-5">
         <h1 class="mt-5">Страница сайта</h1>
+        <div class="m-3">
+            <div class="mt-3">Статистика отображения кол-ва ошибок за каждый прогон</div>
+            <canvas id="myChart"></canvas>
+        </div>
         <div class="site_data">
-        <canvas id="myChart"></canvas>
-        <script>
-            const ctx = document.getElementById('myChart');
-
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                labels: ['Октябрь', 'Ноябрь', 'Декабрь', 'Январь', 'Февраль', 'Март'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
-                },
-                options: {
-                scales: {
-                    y: {
-                    beginAtZero: true
-                    }
-                }
-                }
-            });
-        </script>
-
         </div>
         <form class="mt-3 create_comment">
             <div class="mb-3">
