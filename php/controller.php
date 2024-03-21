@@ -65,7 +65,8 @@ if (isset($income['type'])) {
             name: $income['name'],
             url: $income['url'],
             description: $income['description'], 
-            userId: $income['userId']
+            userId: $income['userId'],
+            category: $income['category']
         ));
     }
     

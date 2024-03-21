@@ -1,12 +1,13 @@
 <?php
 
 class SiteApi extends Api {
-    function createSite($name, $url, $description, $userId) {
+    function createSite($name, $url, $description, $userId, $category) {
         return $this->post([
             "name" => $name,
             "url" => $url,
             "description" => $description,
             "user_id" => $userId,
+            "category" => $category,
         ], "");
     }
 

@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     name: site_form.get("name"),
                     description: site_form.get("description"),
                     url: site_form.get("url"),
-                    userId: sessionStorage.getItem('id')
+                    userId: sessionStorage.getItem('id'),
+                    category: site_form.get('category')
                 })
             }).then(function(response) {
                 response.json().then(function(text) {

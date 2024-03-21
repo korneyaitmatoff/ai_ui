@@ -29,11 +29,11 @@
                     <input type="text" class="form-control" id="desc_input" name="description" required>
                 </div>
                 <div class="mb-3">
-                    <select class="form-select" aria-label="Default select example">
-                        <option value="1" selected>Блог</option>
-                        <option value="2">Интернет-магазин</option>
-                        <option value="3">Соц-сети</option>
-                        <option value="3">Другое</option>
+                    <select class="form-select" aria-label="Default select example" name="category">
+                        <option value="blog" selected>Блог</option>
+                        <option value="shop">Интернет-магазин</option>
+                        <option value="social_net">Соц-сети</option>
+                        <option value="other">Другое</option>
                     </select>
                 </div>
                 <input type="submit" class="btn btn-primary btn_send_site_form" value="СОЗДАТЬ!">
@@ -69,6 +69,7 @@
                 </div>
             </div>
         </div>
+        <br><br><br>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
     </body>
