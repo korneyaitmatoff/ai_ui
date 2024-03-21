@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (text['diff'] > 0) {
                 diff.innerHTML = "Кол-во ошибок на " + text['diff'] + " меньше, чем среднее значение."
             } else {
-                diff.innerHTML = "Кол-во ошибок на " + text['diff'] + " больше, чем среднее значение."
+                diff.innerHTML = "Кол-во ошибок на " + Math.abs(text['diff']) + " больше, чем среднее значение."
             }
         })
     })
