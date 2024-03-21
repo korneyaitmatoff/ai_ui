@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
             
             let diff = document.querySelector(".diff");
 
-            if (text['diff'] > 0) {
-                diff.innerHTML = "Кол-во ошибок на " + text['diff'] + " меньше, чем среднее значение."
+            if (text['ml'] == 1) {
+                diff.innerHTML = "Кол-во ошибок на " + text['diff'] + "% меньше, чем среднее значение в данной категории."
             } else {
-                diff.innerHTML = "Кол-во ошибок на " + Math.abs(text['diff']) + " больше, чем среднее значение."
+                diff.innerHTML = "Кол-во ошибок на " + Math.abs(text['diff']) + "% больше, чем среднее значение в данной категории."
             }
         })
     })
