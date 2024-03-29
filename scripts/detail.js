@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     userId: sessionStorage.getItem('id')
                 })
             }).then(function(response) {
+                console.log(response.text);
                 response.json().then(function(text) {
                     if (response.ok) {
                         window.location.replace("/site_detail.php?id=" + params.get("id"));
