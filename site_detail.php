@@ -15,8 +15,8 @@
     <div class="container mt-5">
         <h1 class="mt-5">Страница сайта</h1>
         <div class="m-3">
-            <div class="mt-3">Статистика отображения кол-ва ошибок за каждый прогон</div>
-            <canvas id="myChart"></canvas>
+            <canvas id="html_chart"></canvas>
+            <canvas id="css_chart"></canvas>
         </div>
         <div class="m-3">
             <p class="diff"></p>

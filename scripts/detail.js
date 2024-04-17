@@ -1,27 +1,48 @@
 const appUrl = "php/controller.php";
 
 document.addEventListener("DOMContentLoaded", function () {
-    function getChart(labels, data) {
-        const ctx = document.getElementById('myChart');
+    function getChart(labels, data, title, element_id) {
+        const ctx = document.getElementById(element_id);
 
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                labels: labels,
-                datasets: [{
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+            labels: labels,
+            datasets: [
+                {
                     label: 'Кол-во ошибок за прогон',
-                    data: data,
-                    borderWidth: 1
-                }]
+                    data: data["error"],
+                    borderWidth: 1,
+                    borderColor: "#800000",
+                    backgroundColor: "#800000",
                 },
-                options: {
+                {
+                    label: 'Кол-во предупреждений за прогон',
+                    data: data["warning"],
+                    borderWidth: 1,
+                    borderColor: "#FF8C00",
+                    backgroundColor: "#FF8C00",
+                }
+            ],
+            },
+            options: {
                 scales: {
                     y: {
                     beginAtZero: true
                     }
+                },
+                responsive: true,
+                plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: title
                 }
                 }
-            });
+            }
+        });
     }
 
     let params = new URLSearchParams(document.location.search);
@@ -46,7 +67,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 data.push(text['stat'][key]);
             }
             
-            getChart(labels=labels, data=data);
+            getChart(
+                labels,
+                {
+                    "error": [30, 10, 20, 5, 15],
+                    "warning": [5, 30, 2, 1, 0],
+                },
+                "Статистика отображения кол-ва HTML ошибок и предупреждений за каждый прогон",
+                "html_chart"
+            );
+
+            getChart(
+                labels,
+                {
+                    "error": [60, 90, 10, 5, 15],
+                    "warning": [0, 0, 0, 0],
+                },
+                "Статистика отображения кол-ва CSS ошибок и предупреждений за каждый прогон",
+                "css_chart"
+            );
             
             let diff = document.querySelector(".diff");
 
