@@ -52,7 +52,7 @@ if (isset($_GET['type'])) {
         $valApi->addVal(id: $_GET['id']);
         $valApi->addCssVal(id: $_GET['id']);
 
-        header("location:../site_detail.php?id=" . $_GET['id']);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
     if ($_GET['type'] == 'get_site_stat') {
