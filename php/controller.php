@@ -9,7 +9,7 @@ $API_HOST = "http://45.9.43.40";
 $userApi = new UserApi($API_HOST, 82, "user");
 $siteApi = new SiteApi($API_HOST, 84, "site");
 $commentApi = new CommentApi($API_HOST, 83, "comment");
-$valApi = new ValApi($API_HOST, 81, "html_val");
+$valApi = new ValApi($API_HOST, 81, "");
 
 $income = json_decode(file_get_contents('php://input'), true);
 
@@ -50,12 +50,13 @@ if (isset($_GET['type'])) {
     if ($_GET['type'] == 'add_val') {
         #add log
         $valApi->addVal(id: $_GET['id']);
+        $valApi->addCssVal(id: $_GET['id']);
 
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header("location:../site_detail.php?id=" . $_GET['id']);
     }
 
     if ($_GET['type'] == 'get_site_stat') {
-        print_r($valApi->getSiteStat(id: $_GET['id']));
+        print_r($siteApi->getSiteStat(id: $_GET['id']));
     }
 }
 

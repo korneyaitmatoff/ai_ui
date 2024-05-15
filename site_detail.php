@@ -17,9 +17,11 @@
         <div class="m-3">
             <canvas id="html_chart"></canvas>
             <canvas id="css_chart"></canvas>
+            <p id="css_chart_message"></p>
         </div>
         <div class="m-3">
-            <p class="diff"></p>
+            <p class="diff_html"></p>
+            <p class="diff_css"></p>
         </div>
         <div class="site_data">
         </div>

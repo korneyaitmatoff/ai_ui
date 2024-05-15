@@ -22,4 +22,8 @@ class SiteApi extends Api {
     function getSiteListByCategory($category) {
         return $this->get('/list' . '/' . $category);
     }
+
+    function getSiteStat($id) {
+        return $this->get('/stat' . '/' . $id);
+    }
 }
